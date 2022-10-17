@@ -1,0 +1,9 @@
+{
+    "realm": "daybreak",
+    "auth-server-url": "https://keycloak-redhat-rhoam-user-sso.apps.md-gh-rh-rosa-2.66u6.p1.openshiftapps.com/auth", 
+    "ssl-required": "external",
+    "resource": "655cd490",
+    "public-client": true,
+    "confidential-port": 0
+}
+

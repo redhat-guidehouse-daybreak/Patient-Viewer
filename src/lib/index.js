@@ -1,6 +1,7 @@
 import * as React from "react"
 import moment     from "moment"
 import $          from "jquery"
+import UserService from "../services/UserService"
 
 /**
  * Returns the int representation of the first argument or the
@@ -460,12 +461,18 @@ export function request(options) {
     options = typeof options == "string" ? { url : options } : options || {};
     let cfg = $.extend(true, options, {
         headers: {
-            Accept: "application/json+fhir"
+            Accept: "application/json+fhir",
+            "Authorization" : "Bearer " + UserService.getToken()
         }
     })
 
+    console.log(cfg);
+
+    
+
     return new Promise((resolve, reject) => {
-        // console.info("Requesting " + decodeURIComponent(cfg.url))
+        console.info("Requesting " + decodeURIComponent(cfg.url))
+        console.info("Headers " + cfg.headers)
         $.ajax(cfg).then(
             resolve,
             xhr => {
@@ -482,6 +489,7 @@ export function request(options) {
 }
 
 export function getAllPages(options, result = []) {
+    console.log("getAllPages : " + options);
     return request(options).then(bundle => {
         (bundle.entry || []).forEach(item => {
             if (item.fullUrl && result.findIndex(o => (o.fullUrl === item.fullUrl)) == -1) {

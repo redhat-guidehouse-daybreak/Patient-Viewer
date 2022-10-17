@@ -1,34 +1,24 @@
-import React         from "react"
-import ReactDOM      from "react-dom"
-import App           from "./components/App"
-import { Provider }  from "react-redux"
-import STORE         from "./redux"
-import PatientDetail from "./components/PatientDetail"
-import PatientList   from "./components/PatientList"
-import { Router, Route, Switch } from "react-router"
-import createHistory from "history/createHashHistory"
-import jQuery    from "jquery"
+import React from "react"
+import ReactDOM from "react-dom"
+import UserService from "./services/UserService"
+//import HttpService from "./services/HttpService"
 
-window.$ = window.jQuery = jQuery
+import RootPage from "./components/RootPage"
 
-const history = createHistory()
 
-ReactDOM.render(
-    <Provider store={STORE}>
-        <Router history={history}>
-            <Switch>
-                <App>
-                    <Route path="/"               component={PatientList} exact/>
-                    <Route path="/patient/:index" component={PatientDetail}/>
-                </App>
-            </Switch>
-        </Router>
-    </Provider>,
-    document.getElementById("main")
-)
+var callback = () => {
+    console.log(" Callback Invoked  :  " + UserService.isLoggedIn());
+    ReactDOM.render(
+        <RootPage/>,
+        document.getElementById("main")
+    )
+}
 
-$(function () {
+/* $(function () {
     $("body").tooltip({
-        selector : ".patient-detail-page [title]"
+        selector: ".patient-detail-page [title]"
     })
 })
+ */
+UserService.initKeycloak(callback);
+//HttpService.configure();

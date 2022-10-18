@@ -387,6 +387,8 @@ export function getCodeableConcept(concept, defaultValue = "-") {
  * @returns {String}
  */
 export function getCodeOrConcept(data, defaultValue = "-") {
+    if(data === undefined)
+      return defaultValue
     if (typeof data == "string") return data || defaultValue;
     return getCodeableConcept(data, defaultValue);
 }

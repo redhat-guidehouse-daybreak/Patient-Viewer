@@ -50,9 +50,10 @@ export class PatientDetail extends React.Component {
         alertseen: false
     };
 
-    togglePop = () => {
+    closePopup = () => {
         this.setState({
-            alertseen: !this.state.alertseen
+            alertseen: false,
+            popupClosedManually: true
         });
     };
 
@@ -69,6 +70,7 @@ export class PatientDetail extends React.Component {
             groups: {},
             selectedSubCat: "",
             alertseen: false,
+            popupClosedManually : false,
             bundle: $.isEmptyObject(this.props.query.bundle) ?
                 null :
                 { ...this.props.query.bundle }
@@ -234,8 +236,7 @@ export class PatientDetail extends React.Component {
         return (
             <div className="panel panel-default patient col-xs-12">
                 <p> Signed in as : {UserService.getUsername()}</p>
-                <button className="btn btn-danger" onClick={this.togglePop}>Show Alerts</button>
-                {this.state.alertseen ? <PatientAlert toggle={this.togglePop} patient={this.state.patient}
+                {(this.state.alertseen && !this.state.popupClosedManually) ? <PatientAlert toggle={this.closePopup} patient={this.state.patient} patientResources={this.state.groups}
                     className="embed-responsive-item"
                     base={this.props.settings.server.url} /> : null}
                 {/*      <Popup trigger={<button> Trigger</button>} position="right center">
@@ -386,6 +387,18 @@ export class PatientDetail extends React.Component {
             selectedSubCat = Object.keys(this.state.groups)[0] || ""
         }
 
+        if(groups instanceof Array)
+        {
+            groups.forEach((str) =>{
+                if(str == "RiskAssessment" && !this.state.alertseen)
+                {
+                    this.setState({
+                        alertseen: true
+                    });
+                }
+            })
+        }
+        
         return (
             <div className="page patient-detail-page">
                 <nav className="navbar bg-primary navbar-fixed-top">
@@ -479,6 +492,7 @@ export class PatientDetail extends React.Component {
             </div>
         )
     }
+    
 }
 
 export default connect(state => state)(PatientDetail)

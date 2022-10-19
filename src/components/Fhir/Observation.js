@@ -111,7 +111,12 @@ export default class Observations extends React.Component
 
     render()
     {
+        /* var content = this.renderObservation(this.props.resources[0].resource);
+        var content1 = this.renderObservation(this.props.resources[1].resource);
+        console.log(content);
+        console.log(content1); */
         return (
+            
             <Grid
                 rows={ (this.props.resources || []).map(o => o.resource) }
                 title="Observations"

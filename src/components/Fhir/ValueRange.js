@@ -10,7 +10,7 @@ export default function ValueRange({ range }) {
                 low !== undefined &&
                 <span>
                     <span className="text-muted">low: </span>
-                    <span>{ low }</span>
+                    <span>{ low.value } ({low.unit})</span>
                 </span>
             }
             {
@@ -18,7 +18,7 @@ export default function ValueRange({ range }) {
                 <span>
                     { low !== undefined && <span>&nbsp;</span> }
                     <span className="text-muted">high: </span>
-                    <span>{ high }</span>
+                    <span>{ high.value } ({high.unit})</span>
                 </span>
             }
             {

@@ -94,7 +94,7 @@ export default class PatientAlert extends React.Component {
                     <div>
                         <h3 className="alert_heading">BEHAVIORAL SAFETY ALERT</h3>
                         <div>
-                            The <strong> VA REACH VET </strong> predictive model has determined that <strong>{getPatientName(this.props.patient)}</strong> is at <strong className={`${riskLevel.indexOf("Medium") != -1 ? "orange_hightlight" : "red_hightlight"}`} >{riskLevel}</strong> for <b>attempting suicide / self-harm</b> for the following clinical reasons :
+                            <p>The <strong> VA REACH VET </strong> predictive model has determined that <strong>{getPatientName(this.props.patient)}</strong> is at <strong className={`${riskLevel.indexOf("Medium") != -1 ? "orange_hightlight" : "red_hightlight"}`} >{riskLevel}</strong> for <b>attempting suicide/self-harm</b> for the following clinical reasons:</p>
                             <ul className="no-bullets">
                                 {
                                     rationaleList.map((str, index) => {
@@ -102,13 +102,13 @@ export default class PatientAlert extends React.Component {
                                     })
                                 }
                             </ul>
-                            <p > The following areas of the patient record are recommended for review :</p>
+                            <p > The following areas of the patient record are recommended for review:</p>
                             <ul>
                                 <li> Link to <a>Problem List</a></li>
                                 <li> Link to <a>Current Medication</a></li>
                                 <li> Link to <a>Problem Encounters last 30 Days</a></li>
                             </ul>
-                            <p> In addition, because <strong>{getPatientName(this.props.patient)}</strong> lives in <strong>{this.getCityState(this.props.patient).city} , {this.getCityState(this.props.patient).state}</strong>, they are at elevated social risk for <b> attempting suicide/ self-harm</b>  for the following community reasons :</p>
+                            <p> In addition, because <strong>{getPatientName(this.props.patient)}</strong> lives in <strong>{this.getCityState(this.props.patient).city}, {this.getCityState(this.props.patient).state}</strong>, they are at an elevated social risk for <b> attempting suicide/self-harm</b>  for the following community reasons:</p>
                             <ul className="no-bullets">
                                 {
                                     socialDeterminants.map((str, index) => {
@@ -116,11 +116,11 @@ export default class PatientAlert extends React.Component {
                                     })
                                 }
                             </ul>
-                            <p> The following are the individuals who are a part of <strong>{getPatientName(this.props.patient)}</strong> care team :</p>
+                            <p> The following are the individuals who are a part of the care team for <strong>{getPatientName(this.props.patient)}:</strong> </p>
                             <ul>
                                 {
                                     careTeam.map((obj) => {
-                                        return <li> {obj.name} , {obj.Role} , {obj.Phone}</li>
+                                        return <li> {obj.name}, {obj.Role}, {obj.Phone}</li>
                                     })
                                 }
                             </ul>

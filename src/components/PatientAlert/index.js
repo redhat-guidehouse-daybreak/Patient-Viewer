@@ -27,6 +27,23 @@ export default class PatientAlert extends React.Component {
         this.props.toggle();
     };
 
+    getCityState = (patient) => {
+        var cityState = {
+            city: "",
+            state: ""
+        };
+        if (patient.address && patient.address instanceof Array) {
+            for (var i = 0; i < patient.address.length; i++) {
+                if (patient.address[i].use == "home") {
+                    cityState.city = patient.address[i].city;
+                    cityState.state = patient.address[i].state;
+                }
+            }
+        }
+
+        return cityState;
+    }
+
 
 
     render() {
@@ -77,33 +94,33 @@ export default class PatientAlert extends React.Component {
                     <div>
                         <h3 className="alert_heading">BEHAVIORAL SAFETY ALERT</h3>
                         <div>
-                            The <strong> VA REACH VET </strong> predictive model has determined that <strong className="orange_hightlight">{getPatientName(this.props.patient)}</strong> is at <strong>{riskLevel}</strong> risk for suicide ideation for the following clinical reasons :
-                            <ul className="orange_hightlight">
+                            The <strong> VA REACH VET </strong> predictive model has determined that <strong>{getPatientName(this.props.patient)}</strong> is at <strong className={`${riskLevel.indexOf("Medium") != -1 ? "orange_hightlight" : "red_hightlight"}`} >{riskLevel}</strong> for <b>attempting suicide / self-harm</b> for the following clinical reasons :
+                            <ul className="no-bullets">
                                 {
                                     rationaleList.map((str, index) => {
-                                        return <li>{index+1}. {str} </li>
+                                        return <li className="numbered">{index + 1}. {str} </li>
                                     })
                                 }
                             </ul>
-                            <p> The following areas of the patient record are recommended for review :</p>
+                            <p > The following areas of the patient record are recommended for review :</p>
                             <ul>
                                 <li> Link to <a>Problem List</a></li>
                                 <li> Link to <a>Current Medication</a></li>
                                 <li> Link to <a>Problem Encounters last 30 Days</a></li>
                             </ul>
-                            <p> In addition, because <strong>{getPatientName(this.props.patient)}</strong> lives at <strong>{getPatientHomeAddress(this.props.patient)}</strong>, they are at elevated rils for the following community reasons :</p>
-                            <ul className="orange_hightlight">
+                            <p> In addition, because <strong>{getPatientName(this.props.patient)}</strong> lives in <strong>{this.getCityState(this.props.patient).city} , {this.getCityState(this.props.patient).state}</strong>, they are at elevated social risk for <b> attempting suicide/ self-harm</b>  for the following community reasons :</p>
+                            <ul className="no-bullets">
                                 {
-                                    socialDeterminants.map((str,index)=>{
-                                        return <li>{index+1}. {str} </li>
+                                    socialDeterminants.map((str, index) => {
+                                        return <li className="numbered">{index + 1}. {str} </li>
                                     })
                                 }
                             </ul>
                             <p> The following are the individuals who are a part of <strong>{getPatientName(this.props.patient)}</strong> care team :</p>
-                            <ul className="orange_hightlight">
+                            <ul>
                                 {
-                                    careTeam.map((obj)=>{
-                                        return <li> [{obj.name}],[{obj.Role}],[{obj.Phone}]</li>
+                                    careTeam.map((obj) => {
+                                        return <li> {obj.name} , {obj.Role} , {obj.Phone}</li>
                                     })
                                 }
                             </ul>

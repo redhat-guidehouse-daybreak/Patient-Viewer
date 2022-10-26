@@ -116,7 +116,7 @@ export default class PatientAlert extends React.Component {
                                     })
                                 }
                             </ul>
-                            <p> The following are the individuals who are a part of the care team for <strong>{getPatientName(this.props.patient)}:</strong> </p>
+                            <p> The following individuals are part of the care team for <strong>{getPatientName(this.props.patient)}:</strong> </p>
                             <ul>
                                 {
                                     careTeam.map((obj) => {

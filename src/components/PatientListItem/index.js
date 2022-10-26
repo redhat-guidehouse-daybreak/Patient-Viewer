@@ -31,7 +31,7 @@ export default class PatientListItem extends React.Component
     };
 
     render() {
-        let age = getPatientAge(this.props.patient)
+        let age = getPatientAge(this.props.patient) + " year";
         let name = getPatientName(this.props)
         if (this.props.query.params.name) {
             name = renderSearchHighlight(name, this.props.query.params.name)

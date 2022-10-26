@@ -23,13 +23,15 @@ import {
     getPatientPhone,
     getPatientEmail,
     getPatientHomeAddress,
+    getPatientHomeAddressWithZip,
     getPatientAge,
     getPath,
     intVal,
     getBundleURL,
     parseQueryString,
     getPatientMRN,
-    getAllPages
+    getAllPages,
+    capFirstLetter
 } from "../../lib"
 import "./PatientDetail.less"
 import PatientAlert from "../PatientAlert";
@@ -288,7 +290,7 @@ export class PatientDetail extends React.Component {
                         <div className="row">
                             <div className="col-xs-4 col-sm-2 col-lg-1 text-right text-muted">Gender:</div>
                             <div className="col-xs-8 col-sm-3 col-lg-3 text-left">
-                                {this.state.patient.gender || (this.state.loading ? "loading..." : "Unknown")}
+                                {(this.state.patient.gender ? capFirstLetter(this.state.patient.gender) : "") || (this.state.loading ? "loading..." : "Unknown")}
                             </div>
                             <div className="col-xs-4 col-sm-2 col-lg-1 text-right text-muted">DOB:</div>
                             <div className="col-xs-8 col-sm-5 col-lg-3 text-left">
@@ -309,7 +311,7 @@ export class PatientDetail extends React.Component {
                             </div>
                             <div className="col-xs-4 col-sm-2 col-lg-1 text-right text-muted">Address:</div>
                             <div className="col-xs-8 col-sm-5 col-lg-3 text-left">
-                                {getPatientHomeAddress(this.state.patient) || (this.state.loading ? "loading..." : "Unknown")}
+                                {getPatientHomeAddressWithZip(this.state.patient) || (this.state.loading ? "loading..." : "Unknown")}
                             </div>
                             <div className="col-xs-4 col-sm-2 col-lg-1 text-right text-muted">ID:</div>
                             <div className="col-xs-8 col-sm-3 col-lg-3 text-left">

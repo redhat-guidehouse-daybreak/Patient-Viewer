@@ -7,7 +7,8 @@ import {
     getPatientName,
     getPatientAge,
     renderSearchHighlight,
-    getPatientMRN
+    getPatientMRN,
+    capFirstLetter
 } from "../../lib"
 
 
@@ -88,7 +89,7 @@ export default class PatientListItem extends React.Component
         }
 
         return (
-            <span className={ gender }>{ gender }</span>
+            <span className={ gender }>{ capFirstLetter(gender) }</span>
         );
     }
 }

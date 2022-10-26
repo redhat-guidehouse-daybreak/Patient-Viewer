@@ -5,7 +5,8 @@ import Grid      from "./Grid"
 import Date      from "./Date"
 import {
     getPath,
-    getPatientName
+    getPatientName,
+    capFirstLetter
 } from "../../lib"
 
 export default class Person extends React.Component
@@ -73,7 +74,7 @@ export default class Person extends React.Component
                     },
                     {
                         label: "Gender",
-                        path: "gender",
+                        render: o => capFirstLetter(o.gender),
                         defaultValue: "N/A"
                     },
                     {

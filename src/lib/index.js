@@ -1,6 +1,6 @@
 import * as React from "react"
-import moment     from "moment"
-import $          from "jquery"
+import moment from "moment"
+import $ from "jquery"
 import UserService from "../services/UserService"
 
 /**
@@ -69,7 +69,7 @@ export function getErrorMessage(input) {
     }
 
     else if (input && input.responseText) {
-        out = ( input.responseText + " - " + input.statusText) || "Unknown error"
+        out = (input.responseText + " - " + input.statusText) || "Unknown error"
     }
 
     else if (input && input.statusText) {
@@ -152,7 +152,7 @@ export function parseQueryString(str) {
     str = String(str || "").trim().split("?").pop();
     str.split(/&/).forEach(pair => {
         let tokens = pair.split("=")
-        let key    = decodeURIComponent(tokens[0])
+        let key = decodeURIComponent(tokens[0])
         if (key) {
             let value = decodeURIComponent(tokens[1] || "true")
             if (out.hasOwnProperty(key)) {
@@ -171,7 +171,7 @@ export function parseQueryString(str) {
 
 export function setHashParam(name, value) {
     let query = location.hash.split("?")[1] || "";
-    let hash  = location.hash.replace(/\?.*/, "");
+    let hash = location.hash.replace(/\?.*/, "");
     // console.warn(query)
     query = parseQueryString(query || "");
     if (value === undefined) {
@@ -252,14 +252,14 @@ export function getPatientName(patient) {
         return "";
     }
 
-    let family = Array.isArray(name.family) ? name.family : [ name.family ];
-    let given  = Array.isArray(name.given ) ? name.given  : [ name.given  ];
-    let prefix = Array.isArray(name.prefix) ? name.prefix : [ name.prefix ];
-    let suffix = Array.isArray(name.suffix) ? name.suffix : [ name.suffix ];
+    let family = Array.isArray(name.family) ? name.family : [name.family];
+    let given = Array.isArray(name.given) ? name.given : [name.given];
+    let prefix = Array.isArray(name.prefix) ? name.prefix : [name.prefix];
+    let suffix = Array.isArray(name.suffix) ? name.suffix : [name.suffix];
 
     return [
         prefix.map(t => String(t || "").trim()).join(" "),
-        given .map(t => String(t || "").trim()).join(" "),
+        given.map(t => String(t || "").trim()).join(" "),
         family.map(t => String(t || "").trim()).join(" "),
         suffix.map(t => String(t || "").trim()).join(" ")
     ].filter(Boolean).join(" ");
@@ -303,14 +303,31 @@ export function getPatientHomeAddress(patient = {}) {
 }
 
 /**
+ * Extracts and returns a human-readable address string from FHIR patient object.
+ * @param {Object} patient FHIR patient object
+ * @returns {String} Patient's address or an empty string
+ */
+export function getPatientHomeAddressWithZip(patient = {}) {
+    var addressStr = "";
+    if (patient.address && patient.address instanceof Array) {
+        for (var i = 0; i < patient.address.length; i++) {
+            if (patient.address[i].use == "home") {
+                addressStr = patient.address[i].line[0] + "," + patient.address[i].city + "," + patient.address[i].state + " " + patient.address[i].postalCode;
+            }
+        }
+    }
+    return addressStr;
+}
+
+/**
  * Extracts and returns a human-readable age string from FHIR patient object.
  * @param {Object} patient FHIR patient object
  * @returns {String} Patient's age
  */
 export function getPatientAge(patient) {
-    let from  = moment(patient.birthDate);
-    let to    = moment(patient.deceasedDateTime || undefined);
-    let age   = to - from;
+    let from = moment(patient.birthDate);
+    let to = moment(patient.deceasedDateTime || undefined);
+    let age = to - from;
 
     let seconds = Math.round(age / 1000)
     if (seconds < 60) {
@@ -338,7 +355,18 @@ export function getPatientAge(patient) {
     }
 
     let years = Math.round(days / 365)
-    return years + " year"
+    return years;
+}
+
+/**
+ * Extracts and returns an URL pointing to the patient photo (or an empty string)
+ * @param {String} str stringValue
+ * @returns {String} return first letter Captialized
+ */
+export function capFirstLetter(str) {
+    if (str === undefined)
+        return "";
+    return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 /**
@@ -346,9 +374,9 @@ export function getPatientAge(patient) {
  * @param {Object} patient FHIR patient object
  * @returns {String} Patient's image URL
  */
-export function getPatientImageUri(patient, base="") {
+export function getPatientImageUri(patient, base = "") {
     let data = getPath(patient, "photo.0.data") || "";
-    let url  = getPath(patient, "photo.0.url") || "";
+    let url = getPath(patient, "photo.0.url") || "";
     let type = getPath(patient, "photo.0.contentType") || "";
     if (url.indexOf("/") === 0) {
         url = base + "" + url;
@@ -387,8 +415,8 @@ export function getCodeableConcept(concept, defaultValue = "-") {
  * @returns {String}
  */
 export function getCodeOrConcept(data, defaultValue = "-") {
-    if(data === undefined)
-      return defaultValue
+    if (data === undefined)
+        return defaultValue
     if (typeof data == "string") return data || defaultValue;
     return getCodeableConcept(data, defaultValue);
 }
@@ -438,7 +466,7 @@ export function renderSearchHighlight(html, search) {
     return (
         <span dangerouslySetInnerHTML={{
             __html: search ? searchHighlight(html, search) : html
-        }}/>
+        }} />
     )
 }
 
@@ -460,17 +488,17 @@ export function getBundleURL(bundle, rel) {
 }
 
 export function request(options) {
-    options = typeof options == "string" ? { url : options } : options || {};
+    options = typeof options == "string" ? { url: options } : options || {};
     let cfg = $.extend(true, options, {
         headers: {
             Accept: "application/json+fhir",
-            "Authorization" : "Bearer " + UserService.getToken()
+            "Authorization": "Bearer " + UserService.getToken()
         }
     })
 
     console.log(cfg);
 
-    
+
 
     return new Promise((resolve, reject) => {
         console.info("Requesting " + decodeURIComponent(cfg.url))

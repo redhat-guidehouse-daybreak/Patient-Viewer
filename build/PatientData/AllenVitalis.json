@@ -1,0 +1,2657 @@
+{
+    "resourceType": "Bundle",
+    "id": "9f79bcee-d94e-4ade-aa10-d8ab5aef3195",
+    "meta": {
+        "lastUpdated": "2022-11-08T02:20:01.495+00:00"
+    },
+    "type": "searchset",
+    "total": 80,
+    "link": [
+        {
+            "relation": "self",
+            "url": "http://localhost:9999/fhir/Patient/1/$everything?_count=500"
+        }
+    ],
+    "entry": [
+        {
+            "fullUrl": "http://localhost:9999/fhir/Patient/1",
+            "resource": {
+                "resourceType": "Patient",
+                "id": "1",
+                "meta": {
+                    "versionId": "2",
+                    "lastUpdated": "2022-10-20T21:28:33.641+00:00",
+                    "source": "#UYNTPvaZBVIxs05T"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Allen Vitalis</div>"
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                                    "code": "MR",
+                                    "display": "Medical Record Number"
+                                }
+                            ],
+                            "text": "Medical Record Number"
+                        },
+                        "system": "http://hospital.smarthealthit.org",
+                        "value": "smart-99912345"
+                    }
+                ],
+                "active": true,
+                "name": [
+                    {
+                        "use": "official",
+                        "family": "Vitalis",
+                        "given": [
+                            "Allen"
+                        ]
+                    }
+                ],
+                "telecom": [
+                    {
+                        "system": "phone",
+                        "value": "800-834-9386",
+                        "use": "home"
+                    },
+                    {
+                        "system": "email",
+                        "value": "allen.vitalis@example.com"
+                    }
+                ],
+                "gender": "male",
+                "birthDate": "2004-10-15",
+                "address": [
+                    {
+                        "use": "home",
+                        "line": [
+                            "17 Oak Rd"
+                        ],
+                        "city": "Belmont",
+                        "state": "MA",
+                        "postalCode": "2478",
+                        "country": "USA"
+                    }
+                ],
+                "photo": [
+                    {
+                        "contentType": "image/jpeg",
+                        "url": "https://mj-gallery.com/e09d461a-d15c-459a-bb73-76e3233abc83/grid_0.png",
+                        "size": 20260,
+                        "hash": "e09d461a+d15c+459a+bb73+76e3233abc83",
+                        "title": "Head photograph of the patient"
+                    }
+                ],
+                "generalPractitioner": [
+                    {
+                        "reference": "Practitioner/25"
+                    }
+                ]
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Observation/5",
+            "resource": {
+                "resourceType": "Observation",
+                "id": "5",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">2010-08-12: respiratory_rate = 16.0 {breaths}/min</div>"
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "system": "http://www.bmc.nl/zorgportal/identifiers/observations",
+                        "value": "smart-652-respiratoryrate"
+                    }
+                ],
+                "status": "unknown",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "vital-signs",
+                                "display": "Vital Signs"
+                            }
+                        ],
+                        "text": "Vital Signs"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "9279-1",
+                            "display": "respiratory_rate"
+                        }
+                    ],
+                    "text": "respiratory_rate"
+                },
+                "subject": {
+                    "reference": "Patient/1"
+                },
+                "effectiveDateTime": "2010-08-12",
+                "performer": [
+                    {
+                        "reference": "Practitioner/24"
+                    }
+                ],
+                "valueQuantity": {
+                    "value": 16,
+                    "unit": "{breaths}/min",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "{breaths}/min"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/17",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "17",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">2010-08-12T04:00:00Z: ambulatory encounter</div>"
+                },
+                "status": "finished",
+                "class": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                    "code": "AMB"
+                },
+                "type": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info",
+                                "code": "270427003",
+                                "display": "Patient-initiated encounter"
+                            }
+                        ],
+                        "text": "Patient-initiated ambulatory encounter"
+                    }
+                ],
+                "subject": {
+                    "reference": "Patient/1"
+                },
+                "period": {
+                    "start": "2010-08-12T04:00:00Z",
+                    "end": "2010-08-12T04:20:00Z"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/AllergyIntolerance/14",
+            "resource": {
+                "resourceType": "AllergyIntolerance",
+                "id": "14",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No known allergies</div>"
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                            "code": "active"
+                        }
+                    ]
+                },
+                "verificationStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+                            "code": "confirmed"
+                        }
+                    ]
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "716186003",
+                            "display": "No known allergies"
+                        }
+                    ],
+                    "text": "No known allergies"
+                },
+                "patient": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/MedicationRequest/23",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "id": "23",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Cefdinir 25 MG/ML Oral Suspension (rxnorm: 309054)</div>"
+                },
+                "status": "active",
+                "intent": "order",
+                "medicationCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                            "code": "309054",
+                            "display": "Cefdinir 25 MG/ML Oral Suspension"
+                        }
+                    ],
+                    "text": "Cefdinir 25 MG/ML Oral Suspension"
+                },
+                "subject": {
+                    "reference": "Patient/1"
+                },
+                "dosageInstruction": [
+                    {
+                        "text": "7 mL bid x 10 days",
+                        "timing": {
+                            "repeat": {
+                                "boundsPeriod": {
+                                    "start": "2006-10-08"
+                                },
+                                "frequency": 2,
+                                "period": 1,
+                                "periodUnit": "d"
+                            }
+                        }
+                    }
+                ]
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Immunization/8",
+            "resource": {
+                "resourceType": "Immunization",
+                "id": "8",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">typhoid, oral</div>"
+                },
+                "status": "completed",
+                "vaccineCode": {
+                    "coding": [
+                        {
+                            "system": "http://www2a.cdc.gov/vaccines/IIS/IISStandards/vaccines.asp?rpt=cvx",
+                            "code": "25",
+                            "display": "typhoid, oral"
+                        }
+                    ],
+                    "text": "typhoid, oral"
+                },
+                "patient": {
+                    "reference": "Patient/1"
+                },
+                "occurrenceDateTime": "2013-01-10",
+                "primarySource": true
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Observation/18",
+            "resource": {
+                "resourceType": "Observation",
+                "id": "18",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">2010-08-12: oxygen_saturation = 99.0 %{HemoglobinSaturation}</div>"
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "system": "http://www.bmc.nl/zorgportal/identifiers/observations",
+                        "value": "smart-656-oxygensaturation"
+                    }
+                ],
+                "status": "unknown",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "vital-signs",
+                                "display": "Vital Signs"
+                            }
+                        ],
+                        "text": "Vital Signs"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "2710-2",
+                            "display": "oxygen_saturation"
+                        }
+                    ],
+                    "text": "oxygen_saturation"
+                },
+                "subject": {
+                    "reference": "Patient/1"
+                },
+                "effectiveDateTime": "2010-08-12",
+                "performer": [
+                    {
+                        "reference": "Practitioner/24"
+                    }
+                ],
+                "valueQuantity": {
+                    "value": 99,
+                    "unit": "%{HemoglobinSaturation}",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "%{HemoglobinSaturation}"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Procedure/2",
+            "resource": {
+                "resourceType": "Procedure",
+                "id": "2",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Appendectomy</div>"
+                },
+                "status": "completed",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "80146002",
+                            "display": "Appendectomy"
+                        }
+                    ],
+                    "text": "Appendectomy"
+                },
+                "subject": {
+                    "reference": "Patient/1"
+                },
+                "performedDateTime": "2011-02-15"
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Observation/13",
+            "resource": {
+                "resourceType": "Observation",
+                "id": "13",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">2010-08-12: weight = 23.0 kg</div>"
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "system": "http://www.bmc.nl/zorgportal/identifiers/observations",
+                        "value": "smart-654-weight"
+                    }
+                ],
+                "status": "unknown",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "vital-signs",
+                                "display": "Vital Signs"
+                            }
+                        ],
+                        "text": "Vital Signs"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "3141-9",
+                            "display": "weight"
+                        }
+                    ],
+                    "text": "weight"
+                },
+                "subject": {
+                    "reference": "Patient/1"
+                },
+                "effectiveDateTime": "2010-08-12",
+                "performer": [
+                    {
+                        "reference": "Practitioner/24"
+                    }
+                ],
+                "valueQuantity": {
+                    "value": 23,
+                    "unit": "kg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "kg"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/DocumentReference/19",
+            "resource": {
+                "resourceType": "DocumentReference",
+                "id": "19",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">notes6267.txt</div>"
+                },
+                "status": "current",
+                "type": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "34109-9",
+                            "display": "Note"
+                        }
+                    ],
+                    "text": "Note"
+                },
+                "subject": {
+                    "reference": "Patient/1"
+                },
+                "author": [
+                    {
+                        "reference": "Practitioner/25"
+                    }
+                ],
+                "description": "notes6267.txt",
+                "content": [
+                    {
+                        "attachment": {
+                            "contentType": "text/plain",
+                            "url": "/smart-3-document-ref",
+                            "size": 752,
+                            "hash": "6877f0f83d30dccef6d50cac832438731677a91c"
+                        }
+                    }
+                ]
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Observation/6",
+            "resource": {
+                "resourceType": "Observation",
+                "id": "6",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">2010-08-12: bmi = 16.2 kg/m2</div>"
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "system": "http://www.bmc.nl/zorgportal/identifiers/observations",
+                        "value": "smart-655-bmi"
+                    }
+                ],
+                "status": "unknown",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "vital-signs",
+                                "display": "Vital Signs"
+                            }
+                        ],
+                        "text": "Vital Signs"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "39156-5",
+                            "display": "bmi"
+                        }
+                    ],
+                    "text": "bmi"
+                },
+                "subject": {
+                    "reference": "Patient/1"
+                },
+                "effectiveDateTime": "2010-08-12",
+                "performer": [
+                    {
+                        "reference": "Practitioner/24"
+                    }
+                ],
+                "valueQuantity": {
+                    "value": 16.2,
+                    "unit": "kg/m2",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "kg/m2"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Observation/9",
+            "resource": {
+                "resourceType": "Observation",
+                "id": "9",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">2010-08-12: heart_rate = 90.0 {beats}/min</div>"
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "system": "http://www.bmc.nl/zorgportal/identifiers/observations",
+                        "value": "smart-651-heartrate"
+                    }
+                ],
+                "status": "unknown",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "vital-signs",
+                                "display": "Vital Signs"
+                            }
+                        ],
+                        "text": "Vital Signs"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8867-4",
+                            "display": "heart_rate"
+                        }
+                    ],
+                    "text": "heart_rate"
+                },
+                "subject": {
+                    "reference": "Patient/1"
+                },
+                "effectiveDateTime": "2010-08-12",
+                "performer": [
+                    {
+                        "reference": "Practitioner/24"
+                    }
+                ],
+                "valueQuantity": {
+                    "value": 90,
+                    "unit": "{beats}/min",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "{beats}/min"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Observation/10",
+            "resource": {
+                "resourceType": "Observation",
+                "id": "10",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">2010-08-12: height = 119.0 cm</div>"
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "system": "http://www.bmc.nl/zorgportal/identifiers/observations",
+                        "value": "smart-650-height"
+                    }
+                ],
+                "status": "unknown",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "vital-signs",
+                                "display": "Vital Signs"
+                            }
+                        ],
+                        "text": "Vital Signs"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8302-2",
+                            "display": "height"
+                        }
+                    ],
+                    "text": "height"
+                },
+                "subject": {
+                    "reference": "Patient/1"
+                },
+                "effectiveDateTime": "2010-08-12",
+                "performer": [
+                    {
+                        "reference": "Practitioner/24"
+                    }
+                ],
+                "valueQuantity": {
+                    "value": 119,
+                    "unit": "cm",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "cm"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Condition/15",
+            "resource": {
+                "resourceType": "Condition",
+                "id": "15",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">otitis media</div>"
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "code": "active",
+                            "display": "Active"
+                        }
+                    ],
+                    "text": "Active"
+                },
+                "verificationStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                            "code": "confirmed",
+                            "display": "Confirmed"
+                        }
+                    ],
+                    "text": "Confirmed"
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "65363002",
+                            "display": "otitis media"
+                        }
+                    ],
+                    "text": "otitis media"
+                },
+                "subject": {
+                    "reference": "Patient/1"
+                },
+                "onsetDateTime": "2006-07-18"
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/MedicationRequest/22",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "id": "22",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Permethrin 10 MG/ML Topical Lotion (rxnorm: 312320)</div>"
+                },
+                "status": "active",
+                "intent": "order",
+                "medicationCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                            "code": "312320",
+                            "display": "Permethrin 10 MG/ML Topical Lotion"
+                        }
+                    ],
+                    "text": "Permethrin 10 MG/ML Topical Lotion"
+                },
+                "subject": {
+                    "reference": "Patient/1"
+                },
+                "dosageInstruction": [
+                    {
+                        "text": "apply x1 as directed"
+                    }
+                ]
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Observation/12",
+            "resource": {
+                "resourceType": "Observation",
+                "id": "12",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">2007-09-08: Phe DBS Ql = Normal </div>"
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "system": "http://www.bmc.nl/zorgportal/identifiers/observations",
+                        "value": "smart-3507-lab"
+                    }
+                ],
+                "status": "unknown",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory",
+                                "display": "Laboratory"
+                            }
+                        ],
+                        "text": "Laboratory"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "29571-7",
+                            "display": "Phe DBS Ql"
+                        }
+                    ],
+                    "text": "Phe DBS Ql"
+                },
+                "subject": {
+                    "reference": "Patient/1"
+                },
+                "effectiveDateTime": "2007-09-08",
+                "performer": [
+                    {
+                        "reference": "Practitioner/24"
+                    }
+                ],
+                "valueString": "Normal"
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/DocumentReference/21",
+            "resource": {
+                "resourceType": "DocumentReference",
+                "id": "21",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">reportScan713.png</div>"
+                },
+                "status": "current",
+                "type": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "34109-9",
+                            "display": "Note"
+                        }
+                    ],
+                    "text": "Note"
+                },
+                "subject": {
+                    "reference": "Patient/1"
+                },
+                "author": [
+                    {
+                        "reference": "Practitioner/25"
+                    }
+                ],
+                "description": "reportScan713.png",
+                "content": [
+                    {
+                        "attachment": {
+                            "contentType": "image/png",
+                            "url": "/smart-2-document-ref",
+                            "size": 37051,
+                            "hash": "5d0f42ae821116de2cb9e7e273318f77daf3c37a"
+                        }
+                    }
+                ]
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/DocumentReference/3",
+            "resource": {
+                "resourceType": "DocumentReference",
+                "id": "3",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Note</div>"
+                },
+                "status": "current",
+                "type": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "34109-9",
+                            "display": "Note"
+                        }
+                    ],
+                    "text": "Note"
+                },
+                "subject": {
+                    "reference": "Patient/1"
+                },
+                "author": [
+                    {
+                        "reference": "Practitioner/25"
+                    }
+                ],
+                "description": "Note",
+                "content": [
+                    {
+                        "attachment": {
+                            "contentType": "text/plain",
+                            "url": "/smart-4-note",
+                            "size": 104,
+                            "hash": "b4511c3a6dc7b7344ce50242ac444a20ff53e891"
+                        }
+                    }
+                ]
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Observation/4",
+            "resource": {
+                "resourceType": "Observation",
+                "id": "4",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">2010-08-12: head_circumference = 51.2 cm</div>"
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "system": "http://www.bmc.nl/zorgportal/identifiers/observations",
+                        "value": "smart-657-headcircumference"
+                    }
+                ],
+                "status": "unknown",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "vital-signs",
+                                "display": "Vital Signs"
+                            }
+                        ],
+                        "text": "Vital Signs"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8287-5",
+                            "display": "head_circumference"
+                        }
+                    ],
+                    "text": "head_circumference"
+                },
+                "subject": {
+                    "reference": "Patient/1"
+                },
+                "effectiveDateTime": "2010-08-12",
+                "performer": [
+                    {
+                        "reference": "Practitioner/24"
+                    }
+                ],
+                "valueQuantity": {
+                    "value": 51.2,
+                    "unit": "cm",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "cm"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Condition/16",
+            "resource": {
+                "resourceType": "Condition",
+                "id": "16",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">foreign body in larynx</div>"
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "code": "active",
+                            "display": "Active"
+                        }
+                    ],
+                    "text": "Active"
+                },
+                "verificationStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                            "code": "confirmed",
+                            "display": "Confirmed"
+                        }
+                    ],
+                    "text": "Confirmed"
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "425229001",
+                            "display": "foreign body in larynx"
+                        }
+                    ],
+                    "text": "foreign body in larynx"
+                },
+                "subject": {
+                    "reference": "Patient/1"
+                },
+                "onsetDateTime": "2008-10-06"
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Observation/7",
+            "resource": {
+                "resourceType": "Observation",
+                "id": "7",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">2007-04-21: Biotinidase DBS Ql = Normal </div>"
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "system": "http://www.bmc.nl/zorgportal/identifiers/observations",
+                        "value": "smart-3506-lab"
+                    }
+                ],
+                "status": "unknown",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory",
+                                "display": "Laboratory"
+                            }
+                        ],
+                        "text": "Laboratory"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "38478-4",
+                            "display": "Biotinidase DBS Ql"
+                        }
+                    ],
+                    "text": "Biotinidase DBS Ql"
+                },
+                "subject": {
+                    "reference": "Patient/1"
+                },
+                "effectiveDateTime": "2007-04-21",
+                "performer": [
+                    {
+                        "reference": "Practitioner/24"
+                    }
+                ],
+                "valueString": "Normal"
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Observation/11",
+            "resource": {
+                "resourceType": "Observation",
+                "id": "11",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">2010-08-12: temperature = 37.0 Cel</div>"
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "system": "http://www.bmc.nl/zorgportal/identifiers/observations",
+                        "value": "smart-653-temperature"
+                    }
+                ],
+                "status": "unknown",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "vital-signs",
+                                "display": "Vital Signs"
+                            }
+                        ],
+                        "text": "Vital Signs"
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8310-5",
+                            "display": "temperature"
+                        }
+                    ],
+                    "text": "temperature"
+                },
+                "subject": {
+                    "reference": "Patient/1"
+                },
+                "effectiveDateTime": "2010-08-12",
+                "performer": [
+                    {
+                        "reference": "Practitioner/24"
+                    }
+                ],
+                "valueQuantity": {
+                    "value": 37,
+                    "unit": "Cel",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "Cel"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/DocumentReference/20",
+            "resource": {
+                "resourceType": "DocumentReference",
+                "id": "20",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">report4521.pdf</div>"
+                },
+                "status": "current",
+                "type": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "34109-9",
+                            "display": "Note"
+                        }
+                    ],
+                    "text": "Note"
+                },
+                "subject": {
+                    "reference": "Patient/1"
+                },
+                "author": [
+                    {
+                        "reference": "Practitioner/25"
+                    }
+                ],
+                "description": "report4521.pdf",
+                "content": [
+                    {
+                        "attachment": {
+                            "contentType": "application/pdf",
+                            "url": "/smart-1-document-ref",
+                            "size": 1084656,
+                            "hash": "dd8c31ee6a84ce0ab0943f83e23aba6141e71860"
+                        }
+                    }
+                ]
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/26",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "26",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:54:51.401+00:00",
+                    "source": "#PGxJL0sWikpRVc08"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/27",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "27",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T19:02:36.208+00:00",
+                    "source": "#TaaAUGw04elwFSpN"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/28",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "28",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T19:59:48.139+00:00",
+                    "source": "#71pK36F4bDeeskdJ"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/29",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "29",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T20:06:32.723+00:00",
+                    "source": "#mpmfacyg4UZPoaGN"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/30",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "30",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T20:11:57.672+00:00",
+                    "source": "#j31AqxnBCG2TYLIy"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/31",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "31",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T20:15:13.022+00:00",
+                    "source": "#LuLIjazbv7QY4Us1"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/32",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "32",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T20:15:25.869+00:00",
+                    "source": "#gyWgU1AyojHPyTkv"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/33",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "33",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T20:16:02.186+00:00",
+                    "source": "#qCW29ToRivA2F4Kp"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/34",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "34",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T20:18:16.048+00:00",
+                    "source": "#vLA4EtvtueV9THD6"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/35",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "35",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T20:22:02.080+00:00",
+                    "source": "#dyt3madHspXlCa6B"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/36",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "36",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T20:27:02.997+00:00",
+                    "source": "#yV5AGu3P02poqzrT"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/37",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "37",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T20:28:43.079+00:00",
+                    "source": "#b7r68qAKDZyIg6J9"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/38",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "38",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T20:30:02.079+00:00",
+                    "source": "#QYvkfhcD567xJmGl"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/39",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "39",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T20:33:29.255+00:00",
+                    "source": "#QcEALGVwwTQtiECM"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/40",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "40",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T20:38:44.753+00:00",
+                    "source": "#HwaFMeKEKUgown6j"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/41",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "41",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T20:47:42.581+00:00",
+                    "source": "#JprbDoSEckUkjaMl"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/42",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "42",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T20:58:54.902+00:00",
+                    "source": "#GYdw2mGMRYPJ2kHz"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/43",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "43",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T21:00:22.655+00:00",
+                    "source": "#l9p3NKxpLhcuhvWT"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/44",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "44",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T21:06:57.701+00:00",
+                    "source": "#HkpQOKbq4MViZgN6"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/45",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "45",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T21:10:21.999+00:00",
+                    "source": "#X4PHYZSQRSsqdJmB"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/46",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "46",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T21:15:03.356+00:00",
+                    "source": "#u7inmGLnyG9SIBev"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/47",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "47",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T21:15:40.954+00:00",
+                    "source": "#4mpbkJOO2J1Z8qZq"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/48",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "48",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T21:17:44.693+00:00",
+                    "source": "#ynYQNGipugN7fO8n"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/49",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "49",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T21:21:47.471+00:00",
+                    "source": "#TH0Z0oKGeTZjRVek"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/50",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "50",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T21:27:50.029+00:00",
+                    "source": "#COulMKMJDOBWzQwn"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/51",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "51",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T21:29:00.767+00:00",
+                    "source": "#6M2K0iwnBBSmrN4X"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/52",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "52",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T21:29:09.854+00:00",
+                    "source": "#xrOLld1r1XP7yZCZ"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/53",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "53",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T21:30:43.313+00:00",
+                    "source": "#Y0qKGJdnwRiKcQHF"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/54",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "54",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T21:37:43.110+00:00",
+                    "source": "#8zOkMcHkmkkNLlFz"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/55",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "55",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T21:39:05.147+00:00",
+                    "source": "#Zs9X2dA4i9EHwym8"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/56",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "56",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T21:39:28.169+00:00",
+                    "source": "#mBI8gsTFDAgRuCDu"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/57",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "57",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T21:40:12.315+00:00",
+                    "source": "#zJGoHqqzuz2j1WtU"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/58",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "58",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T21:42:37.556+00:00",
+                    "source": "#qNwCCju9Bsa9rX3p"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/59",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "59",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T21:44:23.373+00:00",
+                    "source": "#xGGiupitJmF0PgIK"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/60",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "60",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T21:46:21.967+00:00",
+                    "source": "#ziRJZT3urR6itECR"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/61",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "61",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T21:47:42.710+00:00",
+                    "source": "#fkay6LclDT8Tkby3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/62",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "62",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T21:53:54.725+00:00",
+                    "source": "#CiO0rseXKEP6HnMO"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/63",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "63",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T22:00:17.211+00:00",
+                    "source": "#9pasHwf3LsGDKoXd"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/64",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "64",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T22:23:45.065+00:00",
+                    "source": "#wTh07W7kBiVT4DkT"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/65",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "65",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T22:27:21.294+00:00",
+                    "source": "#IKZs54SO9NE8bkEg"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/66",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "66",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T22:28:26.446+00:00",
+                    "source": "#5HGg49rwCzgjDIT5"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/67",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "67",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T22:32:28.175+00:00",
+                    "source": "#sHtXoAPq7sWiafIi"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/68",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "68",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T22:36:42.791+00:00",
+                    "source": "#JHVIaWagkRteyBVw"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/69",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "69",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T22:37:45.187+00:00",
+                    "source": "#tC63TJb3vk3FE8h7"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/70",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "70",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T22:39:08.758+00:00",
+                    "source": "#GNoSnY4vPMxtgC6V"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/71",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "71",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T22:40:14.333+00:00",
+                    "source": "#pmIEVPZ4BVnvpPWy"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/72",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "72",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T22:42:01.049+00:00",
+                    "source": "#zwRQ0uv9mwLa9w1d"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/73",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "73",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T22:44:13.473+00:00",
+                    "source": "#GvNsX2HXkOFgWpgB"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/74",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "74",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T22:49:01.379+00:00",
+                    "source": "#G1jjm0NJz5NlutJU"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/75",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "75",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T23:05:39.567+00:00",
+                    "source": "#Eo1CXkK7ot8VpCj4"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/76",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "76",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T23:30:41.463+00:00",
+                    "source": "#t0nitQNme82lJ5zS"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/77",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "77",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T23:32:13.515+00:00",
+                    "source": "#JoCr8UuYlBzfgdqk"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/78",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "78",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T23:42:11.285+00:00",
+                    "source": "#iFKWabsatvmq4XBQ"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/81",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "81",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-06T20:43:32.441+00:00",
+                    "source": "#c9wIAZxUXdWvbVmZ"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Encounter/83",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "83",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-06T21:00:21.612+00:00",
+                    "source": "#mDqJyjhSNCYzOJLB"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">DEMO DEMO Encounter with patient for triggering pull</div>"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/1"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Practitioner/24",
+            "resource": {
+                "resourceType": "Practitioner",
+                "id": "24",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">John Smith</div>"
+                },
+                "active": true,
+                "name": [
+                    {
+                        "use": "official",
+                        "family": "Smith",
+                        "given": [
+                            "John"
+                        ],
+                        "suffix": [
+                            "MD"
+                        ]
+                    }
+                ],
+                "telecom": [
+                    {
+                        "system": "email",
+                        "value": "john.smith@example.com"
+                    }
+                ],
+                "address": [
+                    {
+                        "use": "home",
+                        "line": [
+                            "35 Ridge StApt 13"
+                        ],
+                        "city": "Tulsa",
+                        "state": "OK",
+                        "postalCode": "74117",
+                        "country": "USA"
+                    }
+                ],
+                "gender": "female",
+                "birthDate": "1989-12-08"
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:9999/fhir/Practitioner/25",
+            "resource": {
+                "resourceType": "Practitioner",
+                "id": "25",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2022-10-03T18:45:55.948+00:00",
+                    "source": "#nlU6z3wYX8bd3Tz3"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Joseph Ross</div>"
+                },
+                "active": true,
+                "name": [
+                    {
+                        "use": "official",
+                        "family": "Ross",
+                        "given": [
+                            "Joseph",
+                            "I"
+                        ],
+                        "suffix": [
+                            "MD"
+                        ]
+                    }
+                ],
+                "telecom": [
+                    {
+                        "system": "phone",
+                        "value": "800-960-9294",
+                        "use": "mobile"
+                    },
+                    {
+                        "system": "email",
+                        "value": "joseph.ross@example.com"
+                    }
+                ],
+                "address": [
+                    {
+                        "use": "home",
+                        "line": [
+                            "19 Church StApt 29"
+                        ],
+                        "city": "Tulsa",
+                        "state": "OK",
+                        "postalCode": "74108",
+                        "country": "USA"
+                    }
+                ],
+                "gender": "male",
+                "birthDate": "1963-10-02"
+            },
+            "search": {
+                "mode": "match"
+            }
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+name: Push dataservice to GHCR
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+  
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: patient-viewer-dev
+  IMAGE_TAG: latest
+  
+# Job Creates 
+jobs:        
+  build:
+    name: Build & Push
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    timeout-minutes: 15
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: actions/checkout@v2   
+      
+      - name: Log in to registry
+        # This is where you will update the PAT to GITHUB_TOKEN
+        run: echo "${{ secrets.REGISTRY_TOKEN }}" | docker login ghcr.io -u ${{ secrets.REGISTRY_USER }} --password-stdin
+  
+      - name: Build Docker image
+        run: |
+          docker build . -t ${{ env.REGISTRY }}/gh-inner/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} -t ${{ env.REGISTRY }}/gh-inner/${{ env.IMAGE_NAME }}:${{github.sha}}
+          docker push ${{ env.REGISTRY }}/gh-inner/${{ env.IMAGE_NAME }} --all-tags

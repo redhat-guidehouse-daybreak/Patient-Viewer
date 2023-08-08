@@ -2,7 +2,7 @@
     "realm": "daybreak-dev",
     "auth-server-url": "https://keycloak-keycloak.apps.mission-db.dusr.p1.openshiftapps.com", 
     "ssl-required": "external",
-    "resource": "b041336d",
+    "resource": "2d4049d3",
     "public-client": true,
     "confidential-port": 0
 }
